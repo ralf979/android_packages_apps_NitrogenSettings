@@ -29,4 +29,10 @@
         android:title="@string/fprint_sucess_vib_title"
         android:summary="@string/fprint_sucess_vib_summary"
         android:persistent="false" />
+
+    <com.nitrogen.settings.preferences.SystemSettingSwitchPreference
+        android:key="fod_recognizing_animation"
+        android:title="@string/fod_recog_animation"
+        android:summary="@string/fod_recog_animation_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>
