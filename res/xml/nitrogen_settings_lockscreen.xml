@@ -35,4 +35,16 @@
         android:title="@string/fprint_sucess_vib_title"
         android:summary="@string/fprint_sucess_vib_summary"
         android:persistent="false" />
+
+    <PreferenceCategory
+        android:key="fod_category"
+        android:title="@string/lockscreen_fod_category">
+
+        <com.nitrogen.settings.preferences.SystemSettingSwitchPreference
+            android:key="fod_gesture"
+            android:title="@string/fod_gesture_title"
+            android:summary="@string/fod_gesture_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 </PreferenceScreen>

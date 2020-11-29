@@ -28,11 +28,8 @@ import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.preference.SwitchPreference;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
+import android.os.SystemProperties;
+import androidx.preference.*;
 
 import android.provider.Settings;
 import com.android.settings.R;
@@ -51,11 +48,27 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private FingerprintManager mFingerprintManager;
     private Preference mPocketJudge;
     private SwitchPreference mFingerprintVib;
+    private ContentResolver mResolver;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.nitrogen_settings_lockscreen);
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        PreferenceCategory overallPreferences = (PreferenceCategory) findPreference("fod_category");
+        mResolver = getActivity().getContentResolver();
+
+        boolean enableScreenOffFOD = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_supportScreenOffFod);
+        Preference ScreenOffFODPref = (Preference) findPreference("fod_gesture");
+
+        if (!enableScreenOffFOD){
+            overallPreferences.removePreference(ScreenOffFODPref);
+        }
+
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint)) {
+            prefScreen.removePreference(findPreference("fod_category"));
+        }
 
         ContentResolver resolver = getActivity().getContentResolver();
         final Resources res = getResources();
