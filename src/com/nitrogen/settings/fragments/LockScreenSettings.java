@@ -46,8 +46,10 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String POCKET_JUDGE = "pocket_judge";
 
     private FingerprintManager mFingerprintManager;
+    private Preference mPocketJudge;
     private SwitchPreference mFingerprintVib;
 
     @Override
@@ -56,6 +58,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.nitrogen_settings_lockscreen);
 
         ContentResolver resolver = getActivity().getContentResolver();
+        final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
 
@@ -68,6 +71,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
         mFingerprintVib.setOnPreferenceChangeListener(this);
         }
+        mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
