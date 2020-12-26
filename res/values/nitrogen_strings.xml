@@ -376,4 +376,8 @@
     <string name="switch_retro">Retro</string>
     <string name="switch_telegram">Telegram</string>
     <string name="switch_stockish">Stockish</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen inputs when device is in pocket</string>
 </resources>
