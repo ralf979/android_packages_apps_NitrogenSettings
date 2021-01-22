@@ -55,5 +55,14 @@
             android:max="255"
             settings:min="1"
             android:persistent="false" />
+
+       <com.nitrogen.settings.preferences.SystemSettingListPreference
+           android:key="switch_style"
+           android:title="@string/switch_style_title"
+           android:dialogTitle="@string/switch_style_title"
+           android:entries="@array/switch_style_entries"
+           android:entryValues="@array/switch_style_values"
+           android:summary="%s"
+           android:defaultValue="0" />
     </PreferenceCategory>
 </PreferenceScreen>
