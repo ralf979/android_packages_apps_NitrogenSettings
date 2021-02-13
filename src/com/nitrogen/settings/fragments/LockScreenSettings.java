@@ -66,6 +66,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             overallPreferences.removePreference(ScreenOffFODPref);
         }
 
+        Preference AnimaTogglePref = (Preference) findPreference("fod_recognizing_animation");
+        Preference AnimaListPref = (Preference) findPreference("fod_recognizing_animation_list");            
+
+        if (!com.android.internal.util.ssos.Utils.isPackageInstalled(mContext,"com.ssos.fod.animations")) {
+            overallPreferences.removePreference(AnimaTogglePref);
+            overallPreferences.removePreference(AnimaListPref);                
+        } 
+
         if (!getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint)) {
             prefScreen.removePreference(findPreference("fod_category"));
         }
