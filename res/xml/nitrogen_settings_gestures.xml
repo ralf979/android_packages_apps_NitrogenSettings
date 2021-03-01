@@ -56,5 +56,11 @@
             android:summary="@string/double_tap_to_sleep_lockscreen_summary"
             android:defaultValue="true" />
 
+        <com.nitrogen.settings.preferences.SystemSettingSwitchPreference
+            android:key="doze_trigger_doubletap"
+            android:title="@string/doze_double_tap_title"
+            android:summary="@string/doze_double_tap_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 </PreferenceScreen>
