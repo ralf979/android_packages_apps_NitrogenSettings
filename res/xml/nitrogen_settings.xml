@@ -106,7 +106,7 @@
         </Preference>
 
         <!-- Device Part -->
-        <Preference
+        <!--<Preference
             android:key="device_part2"
             android:persistent="false"
             android:title="@string/device_part_title"
@@ -114,5 +114,5 @@
             <intent android:action="android.intent.action.MAIN"
                  android:targetPackage="org.lineageos.settings"
                  android:targetClass="org.lineageos.settings.MainActivity"/>
-        </Preference>
+        </Preference>-->
 </PreferenceScreen>
