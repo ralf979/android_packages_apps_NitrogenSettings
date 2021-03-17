@@ -292,10 +292,6 @@
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
 
-    <!-- FOD animations -->
-    <string name="fod_recog_animation">FOD recognizing animation</string>
-    <string name="fod_recog_animation_summary">Shows animation while reading your finger</string>
-
    <!-- Statusbar Clock -->
    <string name="status_bar_clock_date_title">Clock and Date</string>
    <string name="status_bar_clock_date_summary">Customize your statusbar clock and date</string>
