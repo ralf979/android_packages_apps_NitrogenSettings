@@ -69,7 +69,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference AnimaTogglePref = (Preference) findPreference("fod_recognizing_animation");
         Preference AnimaListPref = (Preference) findPreference("fod_recognizing_animation_list");            
 
-        if (!com.android.internal.util.ssos.Utils.isPackageInstalled(mContext,"com.ssos.fod.animations")) {
+        if (!com.android.internal.util.nitrogen.NitrogenUtils.isPackageInstalled(mContext,"com.nitrogen.fod.animations")) {
             overallPreferences.removePreference(AnimaTogglePref);
             overallPreferences.removePreference(AnimaListPref);                
         } 
