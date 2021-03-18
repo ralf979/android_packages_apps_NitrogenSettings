@@ -377,9 +377,6 @@
     <string name="pocket_judge_title">Pocket detection</string>
     <string name="pocket_judge_summary">Block screen inputs when device is in pocket</string>
 
-    <!-- Sub-Categorized XMLs - DO NOT REMOVE -->
-    <string name="lockscreen_fod_category">Fingerprint On Display</string>
-
     <!-- Screen off fod -->
     <string name="fod_gesture_title">Screen off FOD</string>
     <string name="fod_gesture_summary">Allows unlocking the device without having to wake up the screen first</string>

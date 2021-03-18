@@ -57,41 +57,21 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefScreen = getPreferenceScreen();
         PreferenceCategory overallPreferences = (PreferenceCategory) findPreference("fod_category");
         mResolver = getActivity().getContentResolver();
+        Context mContext = getContext();
 
         boolean enableScreenOffFOD = getContext().getResources().
                 getBoolean(R.bool.config_supportScreenOffFod);
         Preference ScreenOffFODPref = (Preference) findPreference("fod_gesture");
 
-        if (!enableScreenOffFOD){
-            overallPreferences.removePreference(ScreenOffFODPref);
-        }
-
-        Preference AnimaTogglePref = (Preference) findPreference("fod_recognizing_animation");
-        Preference AnimaListPref = (Preference) findPreference("fod_recognizing_animation_list");            
-
-        if (!com.android.internal.util.nitrogen.NitrogenUtils.isPackageInstalled(mContext,"com.nitrogen.fod.animations")) {
-            overallPreferences.removePreference(AnimaTogglePref);
-            overallPreferences.removePreference(AnimaListPref);                
-        } 
-
-        if (!getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint)) {
-            prefScreen.removePreference(findPreference("fod_category"));
-        }
-
         ContentResolver resolver = getActivity().getContentResolver();
         final Resources res = getResources();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
-        if (!mFingerprintManager.isHardwareDetected()){
-            prefScreen.removePreference(mFingerprintVib);
-        } else {
         mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
         mFingerprintVib.setOnPreferenceChangeListener(this);
-        }
         mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
         boolean mPocketJudgeSupported = res.getBoolean(
                 com.android.internal.R.bool.config_pocketModeSupported);
