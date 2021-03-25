@@ -16,16 +16,25 @@
 
     <!-- Categories -->
     <string name="button_title">Buttons</string>
+    <string name="button_summary">Volume Rockers, playback control, answer</string>
     <string name="gestures_title">Gestures</string>
+    <string name="gestures_summary">Screenshot, torch, double taps</string>
     <string name="lockscreen_title">Lock screen</string>
+    <string name="lockscreen_summary">Lock screen info, pocket mode, fingerprint options</string>
     <string name="misc_title">Miscellaneous</string>
+    <string name="misc_summary">Radio info, usb configuration, switch appearance, aod brightness</string>
     <string name="navbar_title">Navigation bar</string>
+    <string name="navbar_summary">Show/hide, invert layout</string>
     <string name="powermenu_title">Power menu</string>
+    <string name="powermenu_summary">Lockscreen Visibility</string>
     <string name="quicksettings_title">Quick Settings</string>
+    <string name="quicksettings_summary">Animations, Brightness Slider, vibration</string>
     <string name="recents_title">Recents apps</string>
     <string name="statusbar_title">Status bar</string>
+    <string name="statusbar_summary">Icons, Battery, Clock and Date, Network Traffic</string>
     <string name="volume_title">Volume rockers</string>
     <string name="notifications_title">Notifications</string>
+    <string name="notifications_summary">Notifications light, heads up, in-call vibration</string>
     <string name="device_part_title">Device features</string>
 
     <!-- General strings -->
@@ -248,6 +257,7 @@
 
     <!-- AOKP custom system animations -->
     <string name="animation_settings_title">Animations</string>
+    <string name="animation_settings_summary">System, activity, task, screen off...</string>  
     <string name="animation_title">Animations</string>  
     <string name="system_animation_title">System Animations</string>
     <string name="activity_open_title">Activity open animation</string>
